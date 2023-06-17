@@ -13,7 +13,19 @@ class CardItem extends React.Component{
     }
 
     increaseQuantity = () =>{
-        console.log('this', this.state);
+        //this.state.qty += 1;
+        //console.log('this', this.state);
+        //setState form 1 (object form)
+        // this.setState({
+        //     qty: this.state.qty + 1
+        // });
+
+        //setState form 2 (function form)
+        this.setState((prevState) => {
+            return {
+                qty: prevState.qty + 1
+            }
+        });
     }
     render(){
         const {price, title , qty} = this.state;
