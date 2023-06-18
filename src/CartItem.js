@@ -1,46 +1,14 @@
 import React from 'react';
 
-class CardItem extends React.Component{
-    
-    // increaseQuantity = () =>{
-    //     //this.state.qty += 1;
-    //     //console.log('this', this.state);
-    //     //setState form 1 (object form)
-    //     // this.setState({
-    //     //     qty: this.state.qty + 1
-    //     // });
-
-    //     //setState form 2 (function form) -if prev state required use this
-    //     this.setState((prevState) => {
-    //         return {
-    //             qty: prevState.qty + 1
-    //         }
-    //     });
-    // }
-
-    // decreaseQuantity = () =>{
-    //     const { qty } = this.state;
-    //     if(qty === 0){
-    //         return;
-    //     }
-    //     //setState form 2 (function form) -if prev state required use this
-    //     this.setState((prevState) => {
-    //         return {
-    //             qty: prevState.qty - 1
-    //         }
-    //     });
-    // }
-    render(){
-        console.log('this.props', this.props);
-        const {price, title , qty} = this.props.product;
+const CartItem = (props) => {
+        const {price, title , qty} = props.product;
         const {product,
             onIncreaseQuantity,
             onDecreaseQuantity,
             onDeleteProduct
-        } = this.props;
+        } = props;
         return(
             <div className="cart-item">
-                {this.props.jsx}
                 <div className="left-block">
                     <img style={styles.image} />
                 </div>
@@ -73,7 +41,7 @@ class CardItem extends React.Component{
                 </div>
             </div>
         );
-    }
+    
 }
 
 const styles = {
@@ -85,5 +53,5 @@ const styles = {
     }
 }
 
-export default CardItem;
+export default CartItem;
 
